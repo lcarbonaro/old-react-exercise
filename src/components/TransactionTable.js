@@ -11,7 +11,7 @@ function TransactionTable() {
   }, []);
 
   return (
-    <table striped bordered hover>
+    <table>
       <thead>
         <tr>
           <th>Date</th>
