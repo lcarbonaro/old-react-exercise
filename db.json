@@ -97,51 +97,6 @@
       "category": "Food",
       "amount": "3000",
       "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "date": "",
-      "description": "",
-      "category": "",
-      "amount": "",
-      "id": 16
-    },
-    {
-      "description": "",
-      "category": "",
-      "amount": "",
-      "date": "2023-01-23",
-      "id": 17
-    },
-    {
-      "description": "",
-      "category": "",
-      "amount": "",
-      "date": "2023-01-23",
-      "id": 18
-    },
-    {
-      "description": "",
-      "category": "",
-      "amount": "",
-      "date": "2023-04-23T13:57:05.161Z",
-      "id": 19
-    },
-    {
-      "description": "Lyft Ride",
-      "category": "Transportation",
-      "amount": "13.25",
-      "date": "2023-04-24T20:07:46.737Z",
-      "id": 20
-    },
-    {
-      "description": "Lyft Ride",
-      "category": "Transportation",
-      "amount": "13.25",
-      "date": "2023-04-24T20:07:46.737Z",
-      "id": 21
     }
   ]
 }

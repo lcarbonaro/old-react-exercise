@@ -5,7 +5,7 @@ function Form() {
     description: "",
     category: "",
     amount: "",
-    date: new Date().toISOString(),
+    date: new Date().toISOString().slice(0, 10),
   });
 
   const handleChange = (event) => {
@@ -31,7 +31,7 @@ function Form() {
         type="date"
         id="date"
         name="date"
-        value={new Date(formData.date).toLocaleDateString("en-KE")}
+        value={formData.date}
         onChange={handleChange}
       />
 
