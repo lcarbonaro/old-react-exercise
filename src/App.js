@@ -14,10 +14,12 @@ function App() {
   };
 
   const handleFilter = (searchTerm) => {
-    fetch(`http://localhost:3000/transactions?description_like=${searchTerm}`)
-      .then((res) => res.json())
-      .then((data) => setFilteredTransactions(data))
-      .catch((error) => console.log(error));
+    const filtered = transactions.filter((transaction) => {
+      return transaction.description
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+    });
+    setFilteredTransactions(filtered);
   };
 
   return (
@@ -29,5 +31,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
