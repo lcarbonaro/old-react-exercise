@@ -6,12 +6,12 @@ function TransactionTable() {
   useEffect(() => {
     fetch("http://localhost:3000/transactions")
       .then((res) => res.json())
-      .then((data) => setTransactions(data))
+      .then((transaction) => setTransactions(transaction))
       .catch((error) => console.log(error));
   }, []);
 
   return (
-    <table>
+    <table className="table table-striped table-bordered">
       <thead>
         <tr>
           <th>Date</th>
