@@ -24,7 +24,9 @@ function Filter({ handleFilter }) {
         placeholder="Search Your Recent Transaction"
         onChange={handleChange}
       />
-      <button onClick={handleSubmit}>test button</button>
+      <button class="btn btn-primary" onClick={handleSubmit}>
+        Search{" "}
+      </button>
     </div>
   );
 }
