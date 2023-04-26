@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-function TransactionTable() {
-  const [transactions, setTransactions] = useState([]);
+function TransactionTable({transactions}) {
+  //const [transactions, setTransactions] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/transactions")
-      .then((res) => res.json())
-      .then((transaction) => setTransactions(transaction))
-      .catch((error) => console.log(error));
-  }, []);
+  //useEffect(() => {
+  //  fetch("http://localhost:3030/transactions")
+  //    .then((res) => res.json())
+  //    .then((data) => setTransactions(transaction))
+  //    .catch((error) => console.log(error));
+  //}, []);
 
   return (
     <table className="table table-striped table-bordered">

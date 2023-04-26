@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "./components/Form";
@@ -7,19 +7,28 @@ import TransactionTable from "./components/TransactionTable";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
-  const [filteredTransactions, setFilteredTransactions] = useState([]);
+  //const [filteredTransactions, setFilteredTransactions] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    fetch(`http://localhost:3030/transactions?description_like=${searchTerm}`)
+      .then((res) => res.json())
+      .then((data) => setTransactions(data))
+      .catch((error) => console.log(error));
+  }, [searchTerm]);
 
   const handleAddTransaction = (transaction) => {
     setTransactions([...transactions, transaction]);
   };
 
   const handleFilter = (searchTerm) => {
-    const filtered = transactions.filter((transaction) => {
-      return transaction.description
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-    });
-    setFilteredTransactions(filtered);
+    console.log('in handleFilter with:'+searchTerm);
+    //let filtered = transactions.filter(t => 
+    //  t.description.toLowerCase().includes(searchTerm.toLowerCase())
+    //);
+    //console.log('found',filtered);
+    //setFilteredTransactions(filtered);
+    setSearchTerm(searchTerm);
   };
 
   return (
@@ -27,7 +36,7 @@ function App() {
       <h3>The Royal Bank of Flatiron</h3>
       <Filter handleFilter={handleFilter} />
       <Form onAddTransaction={handleAddTransaction} />
-      <TransactionTable transactions={filteredTransactions} />
+      <TransactionTable transactions={transactions} />
     </div>
   );
 }

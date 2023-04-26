@@ -14,7 +14,7 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/transactions", {
+    fetch("http://localhost:3030/transactions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -62,7 +62,7 @@ function Form() {
         placeholder="Amount"
         onChange={handleChange}
       />
-      <button class="btn btn-primary" type="submit">
+      <button className="btn btn-primary" type="submit">
         Add Transaction
       </button>
     </form>
